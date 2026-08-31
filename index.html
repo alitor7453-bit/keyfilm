@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FILMKEYFI</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="logo" href="/">FILM<span>KEYFI</span></a>
+  <nav>
+    <a href="#films">Filmler</a>
+    <a href="#login">Giriş</a>
+    <a href="#register">Üye Ol</a>
+    <a href="/admin.html" id="adminLink" hidden>Admin</a>
+  </nav>
+</header>
+
+<main>
+<section class="hero">
+  <div>
+    <p class="eyebrow">FILMKEYFI</p>
+    <h1>Sınırsız film,<br> sınırsız keyif.</h1>
+    <p>Filmlerini keşfet, hesabını oluştur ve MP4 videolarını doğrudan oynat.</p>
+    <a class="btn" href="#films">Filmleri Gör</a>
+  </div>
+</section>
+
+<section id="films" class="section">
+  <div class="section-title"><h2>Filmler</h2><button class="btn secondary" onclick="loadFilms()">Yenile</button></div>
+  <div id="filmGrid" class="grid"></div>
+</section>
+
+<section id="login" class="auth-section">
+  <div class="card">
+    <h2>Giriş Yap</h2>
+    <form id="loginForm">
+      <input name="email" type="email" placeholder="E-posta" required>
+      <input name="password" type="password" placeholder="Şifre" required>
+      <button class="btn">Giriş Yap</button>
+    </form>
+    <p id="loginMsg" class="msg"></p>
+    <a href="#forgot">Şifremi Unuttum?</a>
+  </div>
+  <div id="register" class="card">
+    <h2>Üye Ol</h2>
+    <form id="registerForm">
+      <input name="name" placeholder="Ad Soyad" required>
+      <input name="email" type="email" placeholder="E-posta" required>
+      <input name="password" type="password" minlength="6" placeholder="Şifre (min. 6 karakter)" required>
+      <button class="btn">Üye Ol</button>
+    </form>
+    <p id="registerMsg" class="msg"></p>
+  </div>
+</section>
+
+<section id="forgot" class="auth-section">
+  <div class="card">
+    <h2>Şifremi Unuttum</h2>
+    <form id="forgotForm">
+      <input name="email" type="email" placeholder="E-posta" required>
+      <button class="btn">Gönder</button>
+    </form>
+    <p id="forgotMsg" class="msg"></p>
+  </div>
+</section>
+</main>
+
+<div id="playerModal" class="modal" hidden>
+  <div class="modal-box">
+    <button class="close" onclick="closePlayer()">×</button>
+    <h2 id="playerTitle"></h2>
+    <video id="player" controls playsinline preload="metadata"></video>
+    <p id="playerDescription"></p>
+  </div>
+</div>
+
+<script src="/app.js"></script>
+</body>
+</html>

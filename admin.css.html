@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="tr">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>FILMKEYFI Admin</title><link rel="stylesheet" href="/admin.css"></head>
+<body>
+<aside class="sidebar">
+  <div class="brand">FILM<span>KEYFI</span> <small>Admin</small></div>
+  <button data-page="dashboard" class="nav active">▦ Dashboard</button>
+  <button data-page="users" class="nav">♙ Kullanıcılar</button>
+  <button data-page="films" class="nav">▣ Filmler</button>
+  <button data-page="upload" class="nav">⬆ Film Yükle</button>
+  <button data-page="categories" class="nav">⌘ Kategoriler</button>
+  <button data-page="payments" class="nav">▣ Ödemeler</button>
+  <button data-page="messages" class="nav">☏ Destek Mesajları</button>
+  <button data-page="settings" class="nav">⚙ Ayarlar</button>
+  <a class="site-link" href="/">Siteye Dön</a>
+</aside>
+<main class="main">
+<header><h1 id="pageTitle">Dashboard</h1><button id="logout" class="danger">Çıkış</button></header>
+
+<section id="dashboard" class="page active"><div id="stats" class="stats"></div></section>
+
+<section id="users" class="page"><div class="panel"><h2>Kullanıcılar</h2><div id="usersTable"></div></div></section>
+
+<section id="films" class="page"><div class="panel"><h2>Filmler</h2><div id="filmsTable"></div></div></section>
+
+<section id="upload" class="page"><div class="panel"><h2>Film Yükle</h2>
+<form id="filmForm" class="form">
+<input name="title" placeholder="Film adı" required>
+<textarea name="description" placeholder="Açıklama"></textarea>
+<input name="year" placeholder="Yıl">
+<input name="duration" placeholder="Süre">
+<select name="categoryId" id="categorySelect"><option value="">Kategori seç</option></select>
+<input name="video" type="file" accept="video/mp4" required>
+<button class="primary">MP4 Filmi Yükle</button>
+<p id="uploadMsg"></p>
+</form></div></section>
+
+<section id="categories" class="page"><div class="panel"><h2>Kategoriler</h2><form id="catForm" class="inline"><input name="name" placeholder="Yeni kategori" required><button class="primary">Ekle</button></form><div id="catList"></div></div></section>
+
+<section id="payments" class="page">
+<div class="panel"><h2>Ödemeler</h2><div id="paymentStats"></div><div id="paymentsTable"></div></div>
+<div class="panel"><h2>Shopier Entegrasyonu</h2>
+<p class="hint">Anahtarları sadece bu admin panelinde sunucuya kaydedin. Gerçek Shopier imza/doğrulama yöntemi hesabınızdaki güncel entegrasyon dokümanına göre uygulanmalıdır.</p>
+<form id="shopierForm" class="form">
+<label><input type="checkbox" name="enabled"> Shopier aktif</label>
+<input name="merchantId" placeholder="Merchant ID">
+<input name="apiKey" placeholder="API Key">
+<input name="apiSecret" placeholder="API Secret" type="password">
+<button class="primary">Shopier Ayarlarını Kaydet</button>
+<p id="shopierMsg"></p>
+</form>
+<div class="urls">
+<p><b>Webhook:</b> <code id="webhookUrl"></code></p>
+<p><b>Başarılı:</b> <code id="successUrl"></code></p>
+<p><b>Başarısız:</b> <code id="failureUrl"></code></p>
+</div></div>
+</section>
+
+<section id="messages" class="page"><div class="panel"><h2>Destek Mesajları</h2><div id="messagesTable"></div></div></section>
+
+<section id="settings" class="page"><div class="panel"><h2>Site Ayarları</h2>
+<form id="settingsForm" class="form"><input name="siteName" placeholder="Site adı"><input name="monthlyPrice" type="number" placeholder="Aylık fiyat"><select name="currency"><option>TRY</option><option>USD</option><option>EUR</option></select><button class="primary">Kaydet</button><p id="settingsMsg"></p></form></div></section>
+</main>
+<script src="/admin.js"></script>
+</body></html>

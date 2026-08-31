@@ -1,0 +1,38 @@
+{
+  "users": [],
+  "films": [],
+  "categories": [
+    {
+      "id": "cat-action",
+      "name": "Aksiyon"
+    },
+    {
+      "id": "cat-drama",
+      "name": "Dram"
+    },
+    {
+      "id": "cat-comedy",
+      "name": "Komedi"
+    },
+    {
+      "id": "cat-scifi",
+      "name": "Bilim Kurgu"
+    }
+  ],
+  "payments": [],
+  "subscriptions": [],
+  "messages": [],
+  "rooms": [],
+  "notifications": [],
+  "settings": {
+    "siteName": "FILMKEYFI",
+    "currency": "TRY",
+    "monthlyPrice": 50,
+    "shopier": {
+      "enabled": false,
+      "merchantId": "",
+      "apiKey": "",
+      "apiSecret": ""
+    }
+  }
+}
